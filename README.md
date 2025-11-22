@@ -21,6 +21,7 @@ public Commands(JavaPlugin plugin) { //your command class
                 .description("gamemode permission")
                 .usage("/gamemode 0, 1, 2, 3")
                 .arguments(1, 1, plugin.getMsg().getPrefix() + "§cUsage: /gamemode 0, 1, 2, 3")
+                //.arguments(system.getMinArgs(), system.getMaxArgs(), new ArrayList<>(Arrays.asList("", "")))
                 .tabCompleter((sender, args) -> {
                     if (args.length == 1) {
                         return Arrays.asList("0", "1", "2", "3");
