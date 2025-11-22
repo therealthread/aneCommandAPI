@@ -5,7 +5,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.SimplePluginManager;
+
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.Field;
@@ -33,10 +34,10 @@ public class CommandManager {
      */
     private void setupCommandMap() {
         try {
-            SimplePluginManager spm = (SimplePluginManager) plugin.getServer().getPluginManager();
-            Field commandMapField = SimplePluginManager.class.getDeclaredField("commandMap");
+            PluginManager pm = plugin.getServer().getPluginManager();
+            Field commandMapField = pm.getClass().getDeclaredField("commandMap");
             commandMapField.setAccessible(true);
-            commandMap = (CommandMap) commandMapField.get(spm);
+            commandMap = (CommandMap) commandMapField.get(pm);
         } catch (Exception e) {
             e.printStackTrace();
         }
