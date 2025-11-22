@@ -1,0 +1,9 @@
+name: aneCore
+version: '0.31R'
+main: me.anemys.test.Main
+api-version: '1.21'
+author: Anemys
+# Contributors:
+# - NotPatch
+
+#no added command, command description or permission etc... each system's configuration is now in its own class :OMG
